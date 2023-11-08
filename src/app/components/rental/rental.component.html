@@ -1,0 +1,26 @@
+<div *ngIf="dataLoaded==false" class="spinner-border text-success" role="status">
+  <span class="visually-hidden">Chargement...</span>
+</div>
+
+<table *ngIf="dataLoaded==true" class="table table-dark table-striped">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Marque</th>
+      <th scope="col">Nom complet du client</th>
+      <th scope="col">Prix ​​journalier du véhicule</th>
+      <th scope="col">Date de location</th>
+      <th scope="col">Date de fin de location</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let rental of rentals">
+      <td>{{ rental.id }}</td>
+      <td>{{ rental.modelFullName }}</td>
+      <td>{{ rental.customerFullName }}</td>
+      <td>{{ rental.dailyPrice }}</td>
+      <td>{{ rental.rentDate }}</td>
+      <td>{{ rental.returnDate }}</td>
+    </tr>
+  </tbody>
+</table>

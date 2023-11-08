@@ -1,0 +1,102 @@
+<div class="container">
+    <div class="row card-group">
+        <div class="col-md-4">
+            <div class="card h-100">
+                <div class="card-body text-center" style="margin-top: 70px;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" fill="black"
+                        class="bi bi-person-circle" viewBox="0 0 16 16" s>
+                        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+                        <path fill-rule="evenodd"
+                            d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
+                    </svg>
+                </div>
+                <div class="card-footer text-center d-grid gap-2">
+                    <button class="btn btn-success" disabled>changer l'image</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="row card">
+                <div class="card-header text-center"
+                    style="background-color: var(--secondThemeColor); color: var(--firstThemeColor); font-weight: bold;">
+                    Mes informations</div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-5  text-end">
+                            <strong>E-mail:</strong>
+                        </div>
+                        <div class="col-md-7">
+                            <p>{{currentUser.email}}</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-5 text-end">
+                            <strong>Prénom et nom de famille:</strong>
+                        </div>
+                        <div class="col-md-7">
+                            <p>{{currentUser.name}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row card mt-1">
+                <div class="card-header text-center"
+                    style="background-color: var(--secondThemeColor); color: var(--firstThemeColor); font-weight: bold;">
+                    Mettez à jour vos informations</div>
+                <div class="card-body">
+                    <form [formGroup]="updateProfileForm">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input formControlName="firstName" type="text" class="form-control"
+                                        id="updatefirstname" placeholder="Nom">
+                                    <label for="signinemail">Nom</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input formControlName="lastName" type="text" class="form-control"
+                                        id="updatelastname" placeholder="Prenom">
+                                    <label for="signinemail">Prenom</label>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="card-footer d-grid gap-2">
+                    <button (click)="updateProfile()" class="btn btn-success float-end px-3">Mettre a jour</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card h-100">
+                <div class="card-header text-center"
+                    style="background-color: var(--secondThemeColor); color: var(--firstThemeColor); font-weight: bold;">
+                    Changer le mot de passe</div>
+                <div class="card-body">
+                    <form [formGroup]="changePasswordForm">
+                        <div class="form-floating">
+                            <input formControlName="oldPassword" type="password" class="form-control" id="oldPassword"
+                                placeholder="Mot de passe actuel">
+                            <label for="oldPassword">Mot de passe actuel</label>
+                        </div>
+                        <div class="form-floating mt-3">
+                            <input formControlName="newPassword" type="password" class="form-control" id="newpassword"
+                                placeholder="nouveau mot de passe">
+                            <label for="newpassword">nouveau mot de passe</label>
+                        </div>
+                        <div class="form-floating mt-3">
+                            <input formControlName="confirmNewPassword" type="password" class="form-control"
+                                id="confirmnewpassword" placeholder="Retapez le nouveau mot de passe">
+                            <label for="confirmnewpassword">Retapez le nouveau mot de passe</label>
+                        </div>
+
+                    </form>
+                </div>
+                <div class="card-footer d-grid gap-2">
+                    <button (click)="changePassword()" class="btn btn-success btn-block">changer le mot de passe</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

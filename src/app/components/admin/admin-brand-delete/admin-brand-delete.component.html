@@ -1,0 +1,17 @@
+<div *ngIf="deletedBrand" class="card">
+    <div class="card-header">
+        <div class="d-flex justify-content-between">
+            <h5>Supprimer la marque {{deletedBrand.name}}</h5>
+        </div>
+
+    </div>
+    <div class="card-body">
+        <strong>{{deletedBrand.name}}</strong> a une valeur d'identification <strong>{{deletedBrand.id}}</strong>Êtes-vous sûr de vouloir supprimer la marque ?
+        <div class="row mt-3">
+            <div class="d-flex justify-content-end">
+                <button (click)="delete(deletedBrand)" type="button" class="btn btn-success me-2">Supprimer</button>
+                <button (click)="closeBrandDeleteModal()" type="button" class="btn btn-danger">Annler</button>
+            </div>
+        </div>
+    </div>
+</div>
